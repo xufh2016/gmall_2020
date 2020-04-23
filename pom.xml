@@ -18,6 +18,11 @@
 	<modules>
 		<module>gmall-core</module>
 		<module>gmall-admin</module>
+		<module>gmall-oms</module>
+		<module>gmall-pms</module>
+		<module>gmall-ums</module>
+		<module>gmall-sms</module>
+		<module>gmall-wms</module>
     </modules>
 
 
@@ -26,7 +31,7 @@
 		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
 		<nacos.version>0.2.2.RELEASE</nacos.version>
 		<mybatisplus.version>3.2.0</mybatisplus.version>
-		<mysql.version>5.1.46</mysql.version>
+		<mysql.version>8.0.19</mysql.version>
 		<swagger.version>2.7.0</swagger.version>
 		<aliyun-sdk-oss.version>3.1.0</aliyun-sdk-oss.version>
 		<lombok.version>1.18.4</lombok.version>
@@ -140,11 +145,24 @@
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-core</artifactId>
 				<version>${shiro.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apach.shiro</groupId>
+						<artifactId>shiro-core</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-spring</artifactId>
 				<version>${shiro.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.shiro</groupId>
+						<artifactId>shiro-lang</artifactId>
+					</exclusion>
+				</exclusions>
+
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

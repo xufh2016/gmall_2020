@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gmall-oms
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 1e874985-3322-4399-8b16-193c3b151eb4
+        file-extension: yml
+        group: dev
