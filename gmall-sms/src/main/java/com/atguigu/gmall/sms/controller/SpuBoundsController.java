@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品spu积分设置
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "商品spu积分设置 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SpuBoundsController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:spubounds:info')")
-    public Resp<SpuBounds> info(@PathVariable("id") Long id){
-		SpuBounds spuBounds = spuBoundsService.getById(id);
+    public Resp<SpuBounds> info(@PathVariable("id") Long id) {
+        SpuBounds spuBounds = spuBoundsService.getById(id);
 
         return Resp.ok(spuBounds);
     }
@@ -57,8 +58,8 @@ public class SpuBoundsController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:spubounds:save')")
-    public Resp<Object> save(@RequestBody SpuBounds spuBounds){
-		spuBoundsService.save(spuBounds);
+    public Resp<Object> save(@RequestBody SpuBounds spuBounds) {
+        spuBoundsService.save(spuBounds);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SpuBoundsController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:spubounds:update')")
-    public Resp<Object> update(@RequestBody SpuBounds spuBounds){
-		spuBoundsService.updateById(spuBounds);
+    public Resp<Object> update(@RequestBody SpuBounds spuBounds) {
+        spuBoundsService.updateById(spuBounds);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SpuBoundsController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:spubounds:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		spuBoundsService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        spuBoundsService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

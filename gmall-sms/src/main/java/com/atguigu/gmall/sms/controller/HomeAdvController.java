@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 首页轮播广告
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "首页轮播广告 管理")
 @RestController
@@ -45,8 +46,8 @@ public class HomeAdvController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:homeadv:info')")
-    public Resp<HomeAdv> info(@PathVariable("id") Long id){
-		HomeAdv homeAdv = homeAdvService.getById(id);
+    public Resp<HomeAdv> info(@PathVariable("id") Long id) {
+        HomeAdv homeAdv = homeAdvService.getById(id);
 
         return Resp.ok(homeAdv);
     }
@@ -57,8 +58,8 @@ public class HomeAdvController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:homeadv:save')")
-    public Resp<Object> save(@RequestBody HomeAdv homeAdv){
-		homeAdvService.save(homeAdv);
+    public Resp<Object> save(@RequestBody HomeAdv homeAdv) {
+        homeAdvService.save(homeAdv);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class HomeAdvController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:homeadv:update')")
-    public Resp<Object> update(@RequestBody HomeAdv homeAdv){
-		homeAdvService.updateById(homeAdv);
+    public Resp<Object> update(@RequestBody HomeAdv homeAdv) {
+        homeAdvService.updateById(homeAdv);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class HomeAdvController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:homeadv:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		homeAdvService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        homeAdvService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

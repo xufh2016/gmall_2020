@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 秒杀活动商品关联
  *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 public interface SeckillSkuRelationService extends IService<SeckillSkuRelation> {
 

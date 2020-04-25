@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 商品阶梯价格
  *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 public interface SkuLadderService extends IService<SkuLadder> {
 

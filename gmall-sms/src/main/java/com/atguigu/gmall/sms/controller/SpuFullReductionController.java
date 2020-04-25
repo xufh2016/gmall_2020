@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品满减信息
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "商品满减信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SpuFullReductionController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:spufullreduction:info')")
-    public Resp<SpuFullReduction> info(@PathVariable("id") Long id){
-		SpuFullReduction spuFullReduction = spuFullReductionService.getById(id);
+    public Resp<SpuFullReduction> info(@PathVariable("id") Long id) {
+        SpuFullReduction spuFullReduction = spuFullReductionService.getById(id);
 
         return Resp.ok(spuFullReduction);
     }
@@ -57,8 +58,8 @@ public class SpuFullReductionController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:spufullreduction:save')")
-    public Resp<Object> save(@RequestBody SpuFullReduction spuFullReduction){
-		spuFullReductionService.save(spuFullReduction);
+    public Resp<Object> save(@RequestBody SpuFullReduction spuFullReduction) {
+        spuFullReductionService.save(spuFullReduction);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SpuFullReductionController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:spufullreduction:update')")
-    public Resp<Object> update(@RequestBody SpuFullReduction spuFullReduction){
-		spuFullReductionService.updateById(spuFullReduction);
+    public Resp<Object> update(@RequestBody SpuFullReduction spuFullReduction) {
+        spuFullReductionService.updateById(spuFullReduction);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SpuFullReductionController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:spufullreduction:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		spuFullReductionService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        spuFullReductionService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

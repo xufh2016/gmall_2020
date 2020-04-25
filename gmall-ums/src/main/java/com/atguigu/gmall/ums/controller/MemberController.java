@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 会员
+ *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 @Api(tags = "会员 管理")
 @RestController
@@ -44,8 +45,8 @@ public class MemberController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('ums:member:info')")
-    public Resp<Member> info(@PathVariable("id") Long id){
-		Member member = memberService.getById(id);
+    public Resp<Member> info(@PathVariable("id") Long id) {
+        Member member = memberService.getById(id);
 
         return Resp.ok(member);
     }
@@ -56,8 +57,8 @@ public class MemberController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('ums:member:save')")
-    public Resp<Object> save(@RequestBody Member member){
-		memberService.save(member);
+    public Resp<Object> save(@RequestBody Member member) {
+        memberService.save(member);
 
         return Resp.ok(null);
     }
@@ -68,8 +69,8 @@ public class MemberController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('ums:member:update')")
-    public Resp<Object> update(@RequestBody Member member){
-		memberService.updateById(member);
+    public Resp<Object> update(@RequestBody Member member) {
+        memberService.updateById(member);
 
         return Resp.ok(null);
     }
@@ -80,8 +81,8 @@ public class MemberController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('ums:member:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		memberService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        memberService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

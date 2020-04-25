@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 优惠券信息
  *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 public interface CouponService extends IService<Coupon> {
 

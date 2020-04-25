@@ -5,11 +5,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Mapper
 public interface UndoLogDao extends BaseMapper<UndoLog> {
-	
+
 }

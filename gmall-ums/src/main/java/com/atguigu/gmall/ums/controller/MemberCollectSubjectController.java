@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 会员收藏的专题活动
+ *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 @Api(tags = "会员收藏的专题活动 管理")
 @RestController
@@ -45,8 +46,8 @@ public class MemberCollectSubjectController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('ums:membercollectsubject:info')")
-    public Resp<MemberCollectSubject> info(@PathVariable("id") Long id){
-		MemberCollectSubject memberCollectSubject = memberCollectSubjectService.getById(id);
+    public Resp<MemberCollectSubject> info(@PathVariable("id") Long id) {
+        MemberCollectSubject memberCollectSubject = memberCollectSubjectService.getById(id);
 
         return Resp.ok(memberCollectSubject);
     }
@@ -57,8 +58,8 @@ public class MemberCollectSubjectController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('ums:membercollectsubject:save')")
-    public Resp<Object> save(@RequestBody MemberCollectSubject memberCollectSubject){
-		memberCollectSubjectService.save(memberCollectSubject);
+    public Resp<Object> save(@RequestBody MemberCollectSubject memberCollectSubject) {
+        memberCollectSubjectService.save(memberCollectSubject);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class MemberCollectSubjectController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('ums:membercollectsubject:update')")
-    public Resp<Object> update(@RequestBody MemberCollectSubject memberCollectSubject){
-		memberCollectSubjectService.updateById(memberCollectSubject);
+    public Resp<Object> update(@RequestBody MemberCollectSubject memberCollectSubject) {
+        memberCollectSubjectService.updateById(memberCollectSubject);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class MemberCollectSubjectController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('ums:membercollectsubject:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		memberCollectSubjectService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        memberCollectSubjectService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

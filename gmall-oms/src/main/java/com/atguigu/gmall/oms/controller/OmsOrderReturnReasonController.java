@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 退货原因
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "退货原因 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsOrderReturnReasonController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsorderreturnreason:info')")
-    public Resp<OmsOrderReturnReason> info(@PathVariable("id") Long id){
-		OmsOrderReturnReason omsOrderReturnReason = omsOrderReturnReasonService.getById(id);
+    public Resp<OmsOrderReturnReason> info(@PathVariable("id") Long id) {
+        OmsOrderReturnReason omsOrderReturnReason = omsOrderReturnReasonService.getById(id);
 
         return Resp.ok(omsOrderReturnReason);
     }
@@ -57,8 +58,8 @@ public class OmsOrderReturnReasonController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsorderreturnreason:save')")
-    public Resp<Object> save(@RequestBody OmsOrderReturnReason omsOrderReturnReason){
-		omsOrderReturnReasonService.save(omsOrderReturnReason);
+    public Resp<Object> save(@RequestBody OmsOrderReturnReason omsOrderReturnReason) {
+        omsOrderReturnReasonService.save(omsOrderReturnReason);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsOrderReturnReasonController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsorderreturnreason:update')")
-    public Resp<Object> update(@RequestBody OmsOrderReturnReason omsOrderReturnReason){
-		omsOrderReturnReasonService.updateById(omsOrderReturnReason);
+    public Resp<Object> update(@RequestBody OmsOrderReturnReason omsOrderReturnReason) {
+        omsOrderReturnReasonService.updateById(omsOrderReturnReason);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsOrderReturnReasonController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsorderreturnreason:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsOrderReturnReasonService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsOrderReturnReasonService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品评价
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "商品评价 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SpuCommentController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('pms:spucomment:info')")
-    public Resp<SpuComment> info(@PathVariable("id") Long id){
-		SpuComment spuComment = spuCommentService.getById(id);
+    public Resp<SpuComment> info(@PathVariable("id") Long id) {
+        SpuComment spuComment = spuCommentService.getById(id);
 
         return Resp.ok(spuComment);
     }
@@ -57,8 +58,8 @@ public class SpuCommentController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:spucomment:save')")
-    public Resp<Object> save(@RequestBody SpuComment spuComment){
-		spuCommentService.save(spuComment);
+    public Resp<Object> save(@RequestBody SpuComment spuComment) {
+        spuCommentService.save(spuComment);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SpuCommentController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:spucomment:update')")
-    public Resp<Object> update(@RequestBody SpuComment spuComment){
-		spuCommentService.updateById(spuComment);
+    public Resp<Object> update(@RequestBody SpuComment spuComment) {
+        spuCommentService.updateById(spuComment);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SpuCommentController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:spucomment:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		spuCommentService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        spuCommentService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * 属性分组
  *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 public interface AttrGroupService extends IService<AttrGroup> {
 

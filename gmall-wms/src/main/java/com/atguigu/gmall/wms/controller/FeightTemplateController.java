@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 运费模板
+ *
  * @author jiangli
- * @since  2020-04-23 14:59:27
+ * @since 2020-04-23 14:59:27
  */
 @Api(tags = "运费模板 管理")
 @RestController
@@ -45,8 +46,8 @@ public class FeightTemplateController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('wms:feighttemplate:info')")
-    public Resp<FeightTemplate> info(@PathVariable("id") Long id){
-		FeightTemplate feightTemplate = feightTemplateService.getById(id);
+    public Resp<FeightTemplate> info(@PathVariable("id") Long id) {
+        FeightTemplate feightTemplate = feightTemplateService.getById(id);
 
         return Resp.ok(feightTemplate);
     }
@@ -57,8 +58,8 @@ public class FeightTemplateController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('wms:feighttemplate:save')")
-    public Resp<Object> save(@RequestBody FeightTemplate feightTemplate){
-		feightTemplateService.save(feightTemplate);
+    public Resp<Object> save(@RequestBody FeightTemplate feightTemplate) {
+        feightTemplateService.save(feightTemplate);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class FeightTemplateController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('wms:feighttemplate:update')")
-    public Resp<Object> update(@RequestBody FeightTemplate feightTemplate){
-		feightTemplateService.updateById(feightTemplate);
+    public Resp<Object> update(@RequestBody FeightTemplate feightTemplate) {
+        feightTemplateService.updateById(feightTemplate);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class FeightTemplateController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('wms:feighttemplate:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		feightTemplateService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        feightTemplateService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

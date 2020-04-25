@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 全国省市区信息
+ *
  * @author jiangli
- * @since  2020-04-23 14:59:27
+ * @since 2020-04-23 14:59:27
  */
 @Api(tags = "全国省市区信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class ShAreaController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('wms:sharea:info')")
-    public Resp<ShArea> info(@PathVariable("id") Integer id){
-		ShArea shArea = shAreaService.getById(id);
+    public Resp<ShArea> info(@PathVariable("id") Integer id) {
+        ShArea shArea = shAreaService.getById(id);
 
         return Resp.ok(shArea);
     }
@@ -57,8 +58,8 @@ public class ShAreaController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('wms:sharea:save')")
-    public Resp<Object> save(@RequestBody ShArea shArea){
-		shAreaService.save(shArea);
+    public Resp<Object> save(@RequestBody ShArea shArea) {
+        shAreaService.save(shArea);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class ShAreaController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('wms:sharea:update')")
-    public Resp<Object> update(@RequestBody ShArea shArea){
-		shAreaService.updateById(shArea);
+    public Resp<Object> update(@RequestBody ShArea shArea) {
+        shAreaService.updateById(shArea);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class ShAreaController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('wms:sharea:delete')")
-    public Resp<Object> delete(@RequestBody Integer[] ids){
-		shAreaService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Integer[] ids) {
+        shAreaService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

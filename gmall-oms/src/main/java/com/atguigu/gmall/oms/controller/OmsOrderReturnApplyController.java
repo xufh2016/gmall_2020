@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单退货申请
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "订单退货申请 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsOrderReturnApplyController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsorderreturnapply:info')")
-    public Resp<OmsOrderReturnApply> info(@PathVariable("id") Long id){
-		OmsOrderReturnApply omsOrderReturnApply = omsOrderReturnApplyService.getById(id);
+    public Resp<OmsOrderReturnApply> info(@PathVariable("id") Long id) {
+        OmsOrderReturnApply omsOrderReturnApply = omsOrderReturnApplyService.getById(id);
 
         return Resp.ok(omsOrderReturnApply);
     }
@@ -57,8 +58,8 @@ public class OmsOrderReturnApplyController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsorderreturnapply:save')")
-    public Resp<Object> save(@RequestBody OmsOrderReturnApply omsOrderReturnApply){
-		omsOrderReturnApplyService.save(omsOrderReturnApply);
+    public Resp<Object> save(@RequestBody OmsOrderReturnApply omsOrderReturnApply) {
+        omsOrderReturnApplyService.save(omsOrderReturnApply);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsOrderReturnApplyController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsorderreturnapply:update')")
-    public Resp<Object> update(@RequestBody OmsOrderReturnApply omsOrderReturnApply){
-		omsOrderReturnApplyService.updateById(omsOrderReturnApply);
+    public Resp<Object> update(@RequestBody OmsOrderReturnApply omsOrderReturnApply) {
+        omsOrderReturnApplyService.updateById(omsOrderReturnApply);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsOrderReturnApplyController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsorderreturnapply:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsOrderReturnApplyService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsOrderReturnApplyService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

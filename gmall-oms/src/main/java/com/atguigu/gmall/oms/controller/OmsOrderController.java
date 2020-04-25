@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "订单 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsOrderController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsorder:info')")
-    public Resp<OmsOrder> info(@PathVariable("id") Long id){
-		OmsOrder omsOrder = omsOrderService.getById(id);
+    public Resp<OmsOrder> info(@PathVariable("id") Long id) {
+        OmsOrder omsOrder = omsOrderService.getById(id);
 
         return Resp.ok(omsOrder);
     }
@@ -57,8 +58,8 @@ public class OmsOrderController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsorder:save')")
-    public Resp<Object> save(@RequestBody OmsOrder omsOrder){
-		omsOrderService.save(omsOrder);
+    public Resp<Object> save(@RequestBody OmsOrder omsOrder) {
+        omsOrderService.save(omsOrder);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsOrderController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsorder:update')")
-    public Resp<Object> update(@RequestBody OmsOrder omsOrder){
-		omsOrderService.updateById(omsOrder);
+    public Resp<Object> update(@RequestBody OmsOrder omsOrder) {
+        omsOrderService.updateById(omsOrder);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsOrderController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsorder:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsOrderService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsOrderService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

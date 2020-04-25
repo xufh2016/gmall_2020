@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * spu属性值
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "spu属性值 管理")
 @RestController
@@ -45,8 +46,8 @@ public class ProductAttrValueController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('pms:productattrvalue:info')")
-    public Resp<ProductAttrValue> info(@PathVariable("id") Long id){
-		ProductAttrValue productAttrValue = productAttrValueService.getById(id);
+    public Resp<ProductAttrValue> info(@PathVariable("id") Long id) {
+        ProductAttrValue productAttrValue = productAttrValueService.getById(id);
 
         return Resp.ok(productAttrValue);
     }
@@ -57,8 +58,8 @@ public class ProductAttrValueController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:productattrvalue:save')")
-    public Resp<Object> save(@RequestBody ProductAttrValue productAttrValue){
-		productAttrValueService.save(productAttrValue);
+    public Resp<Object> save(@RequestBody ProductAttrValue productAttrValue) {
+        productAttrValueService.save(productAttrValue);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class ProductAttrValueController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:productattrvalue:update')")
-    public Resp<Object> update(@RequestBody ProductAttrValue productAttrValue){
-		productAttrValueService.updateById(productAttrValue);
+    public Resp<Object> update(@RequestBody ProductAttrValue productAttrValue) {
+        productAttrValueService.updateById(productAttrValue);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class ProductAttrValueController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:productattrvalue:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		productAttrValueService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        productAttrValueService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

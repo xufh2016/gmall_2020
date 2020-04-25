@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单配置信息
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "订单配置信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsOrderSettingController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsordersetting:info')")
-    public Resp<OmsOrderSetting> info(@PathVariable("id") Long id){
-		OmsOrderSetting omsOrderSetting = omsOrderSettingService.getById(id);
+    public Resp<OmsOrderSetting> info(@PathVariable("id") Long id) {
+        OmsOrderSetting omsOrderSetting = omsOrderSettingService.getById(id);
 
         return Resp.ok(omsOrderSetting);
     }
@@ -57,8 +58,8 @@ public class OmsOrderSettingController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsordersetting:save')")
-    public Resp<Object> save(@RequestBody OmsOrderSetting omsOrderSetting){
-		omsOrderSettingService.save(omsOrderSetting);
+    public Resp<Object> save(@RequestBody OmsOrderSetting omsOrderSetting) {
+        omsOrderSettingService.save(omsOrderSetting);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsOrderSettingController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsordersetting:update')")
-    public Resp<Object> update(@RequestBody OmsOrderSetting omsOrderSetting){
-		omsOrderSettingService.updateById(omsOrderSetting);
+    public Resp<Object> update(@RequestBody OmsOrderSetting omsOrderSetting) {
+        omsOrderSettingService.updateById(omsOrderSetting);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsOrderSettingController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsordersetting:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsOrderSettingService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsOrderSettingService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

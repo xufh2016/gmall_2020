@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 仓库信息
+ *
  * @author jiangli
- * @since  2020-04-23 14:59:27
+ * @since 2020-04-23 14:59:27
  */
 @Api(tags = "仓库信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class WareInfoController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('wms:wareinfo:info')")
-    public Resp<WareInfo> info(@PathVariable("id") Long id){
-		WareInfo wareInfo = wareInfoService.getById(id);
+    public Resp<WareInfo> info(@PathVariable("id") Long id) {
+        WareInfo wareInfo = wareInfoService.getById(id);
 
         return Resp.ok(wareInfo);
     }
@@ -57,8 +58,8 @@ public class WareInfoController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('wms:wareinfo:save')")
-    public Resp<Object> save(@RequestBody WareInfo wareInfo){
-		wareInfoService.save(wareInfo);
+    public Resp<Object> save(@RequestBody WareInfo wareInfo) {
+        wareInfoService.save(wareInfo);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class WareInfoController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('wms:wareinfo:update')")
-    public Resp<Object> update(@RequestBody WareInfo wareInfo){
-		wareInfoService.updateById(wareInfo);
+    public Resp<Object> update(@RequestBody WareInfo wareInfo) {
+        wareInfoService.updateById(wareInfo);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class WareInfoController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('wms:wareinfo:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		wareInfoService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        wareInfoService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * sku图片
  *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 public interface SkuImagesService extends IService<SkuImages> {
 

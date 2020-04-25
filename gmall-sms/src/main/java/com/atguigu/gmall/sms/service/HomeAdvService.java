@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 首页轮播广告
  *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 public interface HomeAdvService extends IService<HomeAdv> {
 

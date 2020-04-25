@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 优惠券分类关联
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Api(tags = "优惠券分类关联 管理")
 @RestController
@@ -45,8 +46,8 @@ public class CouponSpuCategoryRelationController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:couponspucategoryrelation:info')")
-    public Resp<CouponSpuCategoryRelation> info(@PathVariable("id") Long id){
-		CouponSpuCategoryRelation couponSpuCategoryRelation = couponSpuCategoryRelationService.getById(id);
+    public Resp<CouponSpuCategoryRelation> info(@PathVariable("id") Long id) {
+        CouponSpuCategoryRelation couponSpuCategoryRelation = couponSpuCategoryRelationService.getById(id);
 
         return Resp.ok(couponSpuCategoryRelation);
     }
@@ -57,8 +58,8 @@ public class CouponSpuCategoryRelationController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:couponspucategoryrelation:save')")
-    public Resp<Object> save(@RequestBody CouponSpuCategoryRelation couponSpuCategoryRelation){
-		couponSpuCategoryRelationService.save(couponSpuCategoryRelation);
+    public Resp<Object> save(@RequestBody CouponSpuCategoryRelation couponSpuCategoryRelation) {
+        couponSpuCategoryRelationService.save(couponSpuCategoryRelation);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class CouponSpuCategoryRelationController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:couponspucategoryrelation:update')")
-    public Resp<Object> update(@RequestBody CouponSpuCategoryRelation couponSpuCategoryRelation){
-		couponSpuCategoryRelationService.updateById(couponSpuCategoryRelation);
+    public Resp<Object> update(@RequestBody CouponSpuCategoryRelation couponSpuCategoryRelation) {
+        couponSpuCategoryRelationService.updateById(couponSpuCategoryRelation);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class CouponSpuCategoryRelationController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:couponspucategoryrelation:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		couponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        couponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

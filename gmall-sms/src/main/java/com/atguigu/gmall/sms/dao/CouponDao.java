@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 优惠券信息
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Mapper
 public interface CouponDao extends BaseMapper<Coupon> {
-	
+
 }

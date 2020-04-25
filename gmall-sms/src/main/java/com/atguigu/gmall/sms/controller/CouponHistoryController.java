@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 优惠券领取历史记录
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Api(tags = "优惠券领取历史记录 管理")
 @RestController
@@ -45,8 +46,8 @@ public class CouponHistoryController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:couponhistory:info')")
-    public Resp<CouponHistory> info(@PathVariable("id") Long id){
-		CouponHistory couponHistory = couponHistoryService.getById(id);
+    public Resp<CouponHistory> info(@PathVariable("id") Long id) {
+        CouponHistory couponHistory = couponHistoryService.getById(id);
 
         return Resp.ok(couponHistory);
     }
@@ -57,8 +58,8 @@ public class CouponHistoryController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:couponhistory:save')")
-    public Resp<Object> save(@RequestBody CouponHistory couponHistory){
-		couponHistoryService.save(couponHistory);
+    public Resp<Object> save(@RequestBody CouponHistory couponHistory) {
+        couponHistoryService.save(couponHistory);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class CouponHistoryController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:couponhistory:update')")
-    public Resp<Object> update(@RequestBody CouponHistory couponHistory){
-		couponHistoryService.updateById(couponHistory);
+    public Resp<Object> update(@RequestBody CouponHistory couponHistory) {
+        couponHistoryService.updateById(couponHistory);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class CouponHistoryController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:couponhistory:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		couponHistoryService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        couponHistoryService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

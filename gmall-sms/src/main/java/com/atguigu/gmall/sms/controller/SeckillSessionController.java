@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 秒杀活动场次
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "秒杀活动场次 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SeckillSessionController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:seckillsession:info')")
-    public Resp<SeckillSession> info(@PathVariable("id") Long id){
-		SeckillSession seckillSession = seckillSessionService.getById(id);
+    public Resp<SeckillSession> info(@PathVariable("id") Long id) {
+        SeckillSession seckillSession = seckillSessionService.getById(id);
 
         return Resp.ok(seckillSession);
     }
@@ -57,8 +58,8 @@ public class SeckillSessionController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:seckillsession:save')")
-    public Resp<Object> save(@RequestBody SeckillSession seckillSession){
-		seckillSessionService.save(seckillSession);
+    public Resp<Object> save(@RequestBody SeckillSession seckillSession) {
+        seckillSessionService.save(seckillSession);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SeckillSessionController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:seckillsession:update')")
-    public Resp<Object> update(@RequestBody SeckillSession seckillSession){
-		seckillSessionService.updateById(seckillSession);
+    public Resp<Object> update(@RequestBody SeckillSession seckillSession) {
+        seckillSessionService.updateById(seckillSession);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SeckillSessionController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:seckillsession:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		seckillSessionService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        seckillSessionService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

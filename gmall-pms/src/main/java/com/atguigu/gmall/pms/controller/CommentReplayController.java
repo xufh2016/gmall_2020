@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品评价回复关系
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "商品评价回复关系 管理")
 @RestController
@@ -45,8 +46,8 @@ public class CommentReplayController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('pms:commentreplay:info')")
-    public Resp<CommentReplay> info(@PathVariable("id") Long id){
-		CommentReplay commentReplay = commentReplayService.getById(id);
+    public Resp<CommentReplay> info(@PathVariable("id") Long id) {
+        CommentReplay commentReplay = commentReplayService.getById(id);
 
         return Resp.ok(commentReplay);
     }
@@ -57,8 +58,8 @@ public class CommentReplayController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:commentreplay:save')")
-    public Resp<Object> save(@RequestBody CommentReplay commentReplay){
-		commentReplayService.save(commentReplay);
+    public Resp<Object> save(@RequestBody CommentReplay commentReplay) {
+        commentReplayService.save(commentReplay);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class CommentReplayController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:commentreplay:update')")
-    public Resp<Object> update(@RequestBody CommentReplay commentReplay){
-		commentReplayService.updateById(commentReplay);
+    public Resp<Object> update(@RequestBody CommentReplay commentReplay) {
+        commentReplayService.updateById(commentReplay);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class CommentReplayController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:commentreplay:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		commentReplayService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        commentReplayService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

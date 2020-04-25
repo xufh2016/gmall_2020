@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 专题商品
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Api(tags = "专题商品 管理")
 @RestController
@@ -45,8 +46,8 @@ public class HomeSubjectSpuController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:homesubjectspu:info')")
-    public Resp<HomeSubjectSpu> info(@PathVariable("id") Long id){
-		HomeSubjectSpu homeSubjectSpu = homeSubjectSpuService.getById(id);
+    public Resp<HomeSubjectSpu> info(@PathVariable("id") Long id) {
+        HomeSubjectSpu homeSubjectSpu = homeSubjectSpuService.getById(id);
 
         return Resp.ok(homeSubjectSpu);
     }
@@ -57,8 +58,8 @@ public class HomeSubjectSpuController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:homesubjectspu:save')")
-    public Resp<Object> save(@RequestBody HomeSubjectSpu homeSubjectSpu){
-		homeSubjectSpuService.save(homeSubjectSpu);
+    public Resp<Object> save(@RequestBody HomeSubjectSpu homeSubjectSpu) {
+        homeSubjectSpuService.save(homeSubjectSpu);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class HomeSubjectSpuController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:homesubjectspu:update')")
-    public Resp<Object> update(@RequestBody HomeSubjectSpu homeSubjectSpu){
-		homeSubjectSpuService.updateById(homeSubjectSpu);
+    public Resp<Object> update(@RequestBody HomeSubjectSpu homeSubjectSpu) {
+        homeSubjectSpuService.updateById(homeSubjectSpu);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class HomeSubjectSpuController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:homesubjectspu:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		homeSubjectSpuService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        homeSubjectSpuService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

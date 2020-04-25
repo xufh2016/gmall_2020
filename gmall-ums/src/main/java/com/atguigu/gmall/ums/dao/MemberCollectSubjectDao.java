@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 会员收藏的专题活动
+ *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 @Mapper
 public interface MemberCollectSubjectDao extends BaseMapper<MemberCollectSubject> {
-	
+
 }

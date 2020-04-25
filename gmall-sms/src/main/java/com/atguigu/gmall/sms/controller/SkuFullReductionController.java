@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品满减信息
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "商品满减信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SkuFullReductionController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:skufullreduction:info')")
-    public Resp<SkuFullReduction> info(@PathVariable("id") Long id){
-		SkuFullReduction skuFullReduction = skuFullReductionService.getById(id);
+    public Resp<SkuFullReduction> info(@PathVariable("id") Long id) {
+        SkuFullReduction skuFullReduction = skuFullReductionService.getById(id);
 
         return Resp.ok(skuFullReduction);
     }
@@ -57,8 +58,8 @@ public class SkuFullReductionController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:skufullreduction:save')")
-    public Resp<Object> save(@RequestBody SkuFullReduction skuFullReduction){
-		skuFullReductionService.save(skuFullReduction);
+    public Resp<Object> save(@RequestBody SkuFullReduction skuFullReduction) {
+        skuFullReductionService.save(skuFullReduction);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SkuFullReductionController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:skufullreduction:update')")
-    public Resp<Object> update(@RequestBody SkuFullReduction skuFullReduction){
-		skuFullReductionService.updateById(skuFullReduction);
+    public Resp<Object> update(@RequestBody SkuFullReduction skuFullReduction) {
+        skuFullReductionService.updateById(skuFullReduction);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SkuFullReductionController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:skufullreduction:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		skuFullReductionService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        skuFullReductionService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

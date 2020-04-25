@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品阶梯价格
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "商品阶梯价格 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SpuLadderController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:spuladder:info')")
-    public Resp<SpuLadder> info(@PathVariable("id") Long id){
-		SpuLadder spuLadder = spuLadderService.getById(id);
+    public Resp<SpuLadder> info(@PathVariable("id") Long id) {
+        SpuLadder spuLadder = spuLadderService.getById(id);
 
         return Resp.ok(spuLadder);
     }
@@ -57,8 +58,8 @@ public class SpuLadderController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:spuladder:save')")
-    public Resp<Object> save(@RequestBody SpuLadder spuLadder){
-		spuLadderService.save(spuLadder);
+    public Resp<Object> save(@RequestBody SpuLadder spuLadder) {
+        spuLadderService.save(spuLadder);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SpuLadderController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:spuladder:update')")
-    public Resp<Object> update(@RequestBody SpuLadder spuLadder){
-		spuLadderService.updateById(spuLadder);
+    public Resp<Object> update(@RequestBody SpuLadder spuLadder) {
+        spuLadderService.updateById(spuLadder);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SpuLadderController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:spuladder:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		spuLadderService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        spuLadderService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 库存工作单
+ *
  * @author jiangli
- * @since  2020-04-23 14:59:27
+ * @since 2020-04-23 14:59:27
  */
 @Api(tags = "库存工作单 管理")
 @RestController
@@ -45,8 +46,8 @@ public class WareOrderTaskController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('wms:wareordertask:info')")
-    public Resp<WareOrderTask> info(@PathVariable("id") Long id){
-		WareOrderTask wareOrderTask = wareOrderTaskService.getById(id);
+    public Resp<WareOrderTask> info(@PathVariable("id") Long id) {
+        WareOrderTask wareOrderTask = wareOrderTaskService.getById(id);
 
         return Resp.ok(wareOrderTask);
     }
@@ -57,8 +58,8 @@ public class WareOrderTaskController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('wms:wareordertask:save')")
-    public Resp<Object> save(@RequestBody WareOrderTask wareOrderTask){
-		wareOrderTaskService.save(wareOrderTask);
+    public Resp<Object> save(@RequestBody WareOrderTask wareOrderTask) {
+        wareOrderTaskService.save(wareOrderTask);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class WareOrderTaskController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('wms:wareordertask:update')")
-    public Resp<Object> update(@RequestBody WareOrderTask wareOrderTask){
-		wareOrderTaskService.updateById(wareOrderTask);
+    public Resp<Object> update(@RequestBody WareOrderTask wareOrderTask) {
+        wareOrderTaskService.updateById(wareOrderTask);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class WareOrderTaskController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('wms:wareordertask:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		wareOrderTaskService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        wareOrderTaskService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

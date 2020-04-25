@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 支付信息表
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "支付信息表 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsPaymentInfoController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omspaymentinfo:info')")
-    public Resp<OmsPaymentInfo> info(@PathVariable("id") Long id){
-		OmsPaymentInfo omsPaymentInfo = omsPaymentInfoService.getById(id);
+    public Resp<OmsPaymentInfo> info(@PathVariable("id") Long id) {
+        OmsPaymentInfo omsPaymentInfo = omsPaymentInfoService.getById(id);
 
         return Resp.ok(omsPaymentInfo);
     }
@@ -57,8 +58,8 @@ public class OmsPaymentInfoController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omspaymentinfo:save')")
-    public Resp<Object> save(@RequestBody OmsPaymentInfo omsPaymentInfo){
-		omsPaymentInfoService.save(omsPaymentInfo);
+    public Resp<Object> save(@RequestBody OmsPaymentInfo omsPaymentInfo) {
+        omsPaymentInfoService.save(omsPaymentInfo);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsPaymentInfoController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omspaymentinfo:update')")
-    public Resp<Object> update(@RequestBody OmsPaymentInfo omsPaymentInfo){
-		omsPaymentInfoService.updateById(omsPaymentInfo);
+    public Resp<Object> update(@RequestBody OmsPaymentInfo omsPaymentInfo) {
+        omsPaymentInfoService.updateById(omsPaymentInfo);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsPaymentInfoController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omspaymentinfo:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsPaymentInfoService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsPaymentInfoService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

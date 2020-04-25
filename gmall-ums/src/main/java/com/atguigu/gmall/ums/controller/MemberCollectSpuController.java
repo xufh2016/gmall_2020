@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 会员收藏的商品
+ *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 @Api(tags = "会员收藏的商品 管理")
 @RestController
@@ -45,8 +46,8 @@ public class MemberCollectSpuController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('ums:membercollectspu:info')")
-    public Resp<MemberCollectSpu> info(@PathVariable("id") Long id){
-		MemberCollectSpu memberCollectSpu = memberCollectSpuService.getById(id);
+    public Resp<MemberCollectSpu> info(@PathVariable("id") Long id) {
+        MemberCollectSpu memberCollectSpu = memberCollectSpuService.getById(id);
 
         return Resp.ok(memberCollectSpu);
     }
@@ -57,8 +58,8 @@ public class MemberCollectSpuController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('ums:membercollectspu:save')")
-    public Resp<Object> save(@RequestBody MemberCollectSpu memberCollectSpu){
-		memberCollectSpuService.save(memberCollectSpu);
+    public Resp<Object> save(@RequestBody MemberCollectSpu memberCollectSpu) {
+        memberCollectSpuService.save(memberCollectSpu);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class MemberCollectSpuController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('ums:membercollectspu:update')")
-    public Resp<Object> update(@RequestBody MemberCollectSpu memberCollectSpu){
-		memberCollectSpuService.updateById(memberCollectSpu);
+    public Resp<Object> update(@RequestBody MemberCollectSpu memberCollectSpu) {
+        memberCollectSpuService.updateById(memberCollectSpu);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class MemberCollectSpuController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('ums:membercollectspu:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		memberCollectSpuService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        memberCollectSpuService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * sku销售属性&值
  *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 public interface SkuSaleAttrValueService extends IService<SkuSaleAttrValue> {
 

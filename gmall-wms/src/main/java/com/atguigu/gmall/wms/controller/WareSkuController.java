@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品库存
+ *
  * @author jiangli
- * @since  2020-04-23 14:59:27
+ * @since 2020-04-23 14:59:27
  */
 @Api(tags = "商品库存 管理")
 @RestController
@@ -44,8 +45,8 @@ public class WareSkuController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('wms:waresku:info')")
-    public Resp<WareSku> info(@PathVariable("id") Long id){
-		WareSku wareSku = wareSkuService.getById(id);
+    public Resp<WareSku> info(@PathVariable("id") Long id) {
+        WareSku wareSku = wareSkuService.getById(id);
 
         return Resp.ok(wareSku);
     }
@@ -56,8 +57,8 @@ public class WareSkuController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('wms:waresku:save')")
-    public Resp<Object> save(@RequestBody WareSku wareSku){
-		wareSkuService.save(wareSku);
+    public Resp<Object> save(@RequestBody WareSku wareSku) {
+        wareSkuService.save(wareSku);
 
         return Resp.ok(null);
     }
@@ -68,8 +69,8 @@ public class WareSkuController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('wms:waresku:update')")
-    public Resp<Object> update(@RequestBody WareSku wareSku){
-		wareSkuService.updateById(wareSku);
+    public Resp<Object> update(@RequestBody WareSku wareSku) {
+        wareSkuService.updateById(wareSku);
 
         return Resp.ok(null);
     }
@@ -80,8 +81,8 @@ public class WareSkuController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('wms:waresku:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		wareSkuService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        wareSkuService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

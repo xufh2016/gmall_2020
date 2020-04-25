@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 商品满减信息
  *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 public interface SpuFullReductionService extends IService<SpuFullReduction> {
 

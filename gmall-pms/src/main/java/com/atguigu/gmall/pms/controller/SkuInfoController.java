@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * sku信息
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "sku信息 管理")
 @RestController
@@ -44,8 +45,8 @@ public class SkuInfoController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{skuId}")
     @PreAuthorize("hasAuthority('pms:skuinfo:info')")
-    public Resp<SkuInfo> info(@PathVariable("skuId") Long skuId){
-		SkuInfo skuInfo = skuInfoService.getById(skuId);
+    public Resp<SkuInfo> info(@PathVariable("skuId") Long skuId) {
+        SkuInfo skuInfo = skuInfoService.getById(skuId);
 
         return Resp.ok(skuInfo);
     }
@@ -56,8 +57,8 @@ public class SkuInfoController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:skuinfo:save')")
-    public Resp<Object> save(@RequestBody SkuInfo skuInfo){
-		skuInfoService.save(skuInfo);
+    public Resp<Object> save(@RequestBody SkuInfo skuInfo) {
+        skuInfoService.save(skuInfo);
 
         return Resp.ok(null);
     }
@@ -68,8 +69,8 @@ public class SkuInfoController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:skuinfo:update')")
-    public Resp<Object> update(@RequestBody SkuInfo skuInfo){
-		skuInfoService.updateById(skuInfo);
+    public Resp<Object> update(@RequestBody SkuInfo skuInfo) {
+        skuInfoService.updateById(skuInfo);
 
         return Resp.ok(null);
     }
@@ -80,8 +81,8 @@ public class SkuInfoController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:skuinfo:delete')")
-    public Resp<Object> delete(@RequestBody Long[] skuIds){
-		skuInfoService.removeByIds(Arrays.asList(skuIds));
+    public Resp<Object> delete(@RequestBody Long[] skuIds) {
+        skuInfoService.removeByIds(Arrays.asList(skuIds));
 
         return Resp.ok(null);
     }

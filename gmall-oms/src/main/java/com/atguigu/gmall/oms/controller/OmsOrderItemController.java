@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单项信息
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "订单项信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsOrderItemController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsorderitem:info')")
-    public Resp<OmsOrderItem> info(@PathVariable("id") Long id){
-		OmsOrderItem omsOrderItem = omsOrderItemService.getById(id);
+    public Resp<OmsOrderItem> info(@PathVariable("id") Long id) {
+        OmsOrderItem omsOrderItem = omsOrderItemService.getById(id);
 
         return Resp.ok(omsOrderItem);
     }
@@ -57,8 +58,8 @@ public class OmsOrderItemController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsorderitem:save')")
-    public Resp<Object> save(@RequestBody OmsOrderItem omsOrderItem){
-		omsOrderItemService.save(omsOrderItem);
+    public Resp<Object> save(@RequestBody OmsOrderItem omsOrderItem) {
+        omsOrderItemService.save(omsOrderItem);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsOrderItemController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsorderitem:update')")
-    public Resp<Object> update(@RequestBody OmsOrderItem omsOrderItem){
-		omsOrderItemService.updateById(omsOrderItem);
+    public Resp<Object> update(@RequestBody OmsOrderItem omsOrderItem) {
+        omsOrderItemService.updateById(omsOrderItem);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsOrderItemController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsorderitem:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsOrderItemService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsOrderItemService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

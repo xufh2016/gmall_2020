@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品会员价格
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Api(tags = "商品会员价格 管理")
 @RestController
@@ -45,8 +46,8 @@ public class MemberPriceController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:memberprice:info')")
-    public Resp<MemberPrice> info(@PathVariable("id") Long id){
-		MemberPrice memberPrice = memberPriceService.getById(id);
+    public Resp<MemberPrice> info(@PathVariable("id") Long id) {
+        MemberPrice memberPrice = memberPriceService.getById(id);
 
         return Resp.ok(memberPrice);
     }
@@ -57,8 +58,8 @@ public class MemberPriceController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:memberprice:save')")
-    public Resp<Object> save(@RequestBody MemberPrice memberPrice){
-		memberPriceService.save(memberPrice);
+    public Resp<Object> save(@RequestBody MemberPrice memberPrice) {
+        memberPriceService.save(memberPrice);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class MemberPriceController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:memberprice:update')")
-    public Resp<Object> update(@RequestBody MemberPrice memberPrice){
-		memberPriceService.updateById(memberPrice);
+    public Resp<Object> update(@RequestBody MemberPrice memberPrice) {
+        memberPriceService.updateById(memberPrice);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class MemberPriceController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:memberprice:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		memberPriceService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        memberPriceService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 专题商品
  *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 public interface HomeSubjectSpuService extends IService<HomeSubjectSpu> {
 

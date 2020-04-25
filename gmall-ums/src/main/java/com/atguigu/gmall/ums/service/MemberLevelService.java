@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 会员等级
  *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 public interface MemberLevelService extends IService<MemberLevel> {
 

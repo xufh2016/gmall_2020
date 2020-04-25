@@ -14,9 +14,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = " 管理")
 @RestController
@@ -44,8 +43,8 @@ public class UndoLogController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('pms:undolog:info')")
-    public Resp<UndoLog> info(@PathVariable("id") Long id){
-		UndoLog undoLog = undoLogService.getById(id);
+    public Resp<UndoLog> info(@PathVariable("id") Long id) {
+        UndoLog undoLog = undoLogService.getById(id);
 
         return Resp.ok(undoLog);
     }
@@ -56,8 +55,8 @@ public class UndoLogController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:undolog:save')")
-    public Resp<Object> save(@RequestBody UndoLog undoLog){
-		undoLogService.save(undoLog);
+    public Resp<Object> save(@RequestBody UndoLog undoLog) {
+        undoLogService.save(undoLog);
 
         return Resp.ok(null);
     }
@@ -68,8 +67,8 @@ public class UndoLogController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:undolog:update')")
-    public Resp<Object> update(@RequestBody UndoLog undoLog){
-		undoLogService.updateById(undoLog);
+    public Resp<Object> update(@RequestBody UndoLog undoLog) {
+        undoLogService.updateById(undoLog);
 
         return Resp.ok(null);
     }
@@ -80,8 +79,8 @@ public class UndoLogController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:undolog:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		undoLogService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        undoLogService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

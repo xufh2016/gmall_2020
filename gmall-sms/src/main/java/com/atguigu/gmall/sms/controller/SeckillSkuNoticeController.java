@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 秒杀商品通知订阅
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "秒杀商品通知订阅 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SeckillSkuNoticeController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:seckillskunotice:info')")
-    public Resp<SeckillSkuNotice> info(@PathVariable("id") Long id){
-		SeckillSkuNotice seckillSkuNotice = seckillSkuNoticeService.getById(id);
+    public Resp<SeckillSkuNotice> info(@PathVariable("id") Long id) {
+        SeckillSkuNotice seckillSkuNotice = seckillSkuNoticeService.getById(id);
 
         return Resp.ok(seckillSkuNotice);
     }
@@ -57,8 +58,8 @@ public class SeckillSkuNoticeController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:seckillskunotice:save')")
-    public Resp<Object> save(@RequestBody SeckillSkuNotice seckillSkuNotice){
-		seckillSkuNoticeService.save(seckillSkuNotice);
+    public Resp<Object> save(@RequestBody SeckillSkuNotice seckillSkuNotice) {
+        seckillSkuNoticeService.save(seckillSkuNotice);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SeckillSkuNoticeController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:seckillskunotice:update')")
-    public Resp<Object> update(@RequestBody SeckillSkuNotice seckillSkuNotice){
-		seckillSkuNoticeService.updateById(seckillSkuNotice);
+    public Resp<Object> update(@RequestBody SeckillSkuNotice seckillSkuNotice) {
+        seckillSkuNoticeService.updateById(seckillSkuNotice);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SeckillSkuNoticeController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:seckillskunotice:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		seckillSkuNoticeService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        seckillSkuNoticeService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

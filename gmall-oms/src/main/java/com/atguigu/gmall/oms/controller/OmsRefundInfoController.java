@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 退款信息
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "退款信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsRefundInfoController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsrefundinfo:info')")
-    public Resp<OmsRefundInfo> info(@PathVariable("id") Long id){
-		OmsRefundInfo omsRefundInfo = omsRefundInfoService.getById(id);
+    public Resp<OmsRefundInfo> info(@PathVariable("id") Long id) {
+        OmsRefundInfo omsRefundInfo = omsRefundInfoService.getById(id);
 
         return Resp.ok(omsRefundInfo);
     }
@@ -57,8 +58,8 @@ public class OmsRefundInfoController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsrefundinfo:save')")
-    public Resp<Object> save(@RequestBody OmsRefundInfo omsRefundInfo){
-		omsRefundInfoService.save(omsRefundInfo);
+    public Resp<Object> save(@RequestBody OmsRefundInfo omsRefundInfo) {
+        omsRefundInfoService.save(omsRefundInfo);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsRefundInfoController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsrefundinfo:update')")
-    public Resp<Object> update(@RequestBody OmsRefundInfo omsRefundInfo){
-		omsRefundInfoService.updateById(omsRefundInfo);
+    public Resp<Object> update(@RequestBody OmsRefundInfo omsRefundInfo) {
+        omsRefundInfoService.updateById(omsRefundInfo);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsRefundInfoController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsrefundinfo:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsRefundInfoService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsRefundInfoService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

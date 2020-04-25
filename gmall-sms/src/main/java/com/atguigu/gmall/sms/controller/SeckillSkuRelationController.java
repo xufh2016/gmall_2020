@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 秒杀活动商品关联
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "秒杀活动商品关联 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SeckillSkuRelationController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:seckillskurelation:info')")
-    public Resp<SeckillSkuRelation> info(@PathVariable("id") Long id){
-		SeckillSkuRelation seckillSkuRelation = seckillSkuRelationService.getById(id);
+    public Resp<SeckillSkuRelation> info(@PathVariable("id") Long id) {
+        SeckillSkuRelation seckillSkuRelation = seckillSkuRelationService.getById(id);
 
         return Resp.ok(seckillSkuRelation);
     }
@@ -57,8 +58,8 @@ public class SeckillSkuRelationController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:seckillskurelation:save')")
-    public Resp<Object> save(@RequestBody SeckillSkuRelation seckillSkuRelation){
-		seckillSkuRelationService.save(seckillSkuRelation);
+    public Resp<Object> save(@RequestBody SeckillSkuRelation seckillSkuRelation) {
+        seckillSkuRelationService.save(seckillSkuRelation);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SeckillSkuRelationController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:seckillskurelation:update')")
-    public Resp<Object> update(@RequestBody SeckillSkuRelation seckillSkuRelation){
-		seckillSkuRelationService.updateById(seckillSkuRelation);
+    public Resp<Object> update(@RequestBody SeckillSkuRelation seckillSkuRelation) {
+        seckillSkuRelationService.updateById(seckillSkuRelation);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SeckillSkuRelationController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:seckillskurelation:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		seckillSkuRelationService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        seckillSkuRelationService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

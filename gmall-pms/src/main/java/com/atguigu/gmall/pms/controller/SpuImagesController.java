@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * spu图片
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "spu图片 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SpuImagesController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('pms:spuimages:info')")
-    public Resp<SpuImages> info(@PathVariable("id") Long id){
-		SpuImages spuImages = spuImagesService.getById(id);
+    public Resp<SpuImages> info(@PathVariable("id") Long id) {
+        SpuImages spuImages = spuImagesService.getById(id);
 
         return Resp.ok(spuImages);
     }
@@ -57,8 +58,8 @@ public class SpuImagesController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:spuimages:save')")
-    public Resp<Object> save(@RequestBody SpuImages spuImages){
-		spuImagesService.save(spuImages);
+    public Resp<Object> save(@RequestBody SpuImages spuImages) {
+        spuImagesService.save(spuImages);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SpuImagesController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:spuimages:update')")
-    public Resp<Object> update(@RequestBody SpuImages spuImages){
-		spuImagesService.updateById(spuImages);
+    public Resp<Object> update(@RequestBody SpuImages spuImages) {
+        spuImagesService.updateById(spuImages);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SpuImagesController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:spuimages:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		spuImagesService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        spuImagesService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

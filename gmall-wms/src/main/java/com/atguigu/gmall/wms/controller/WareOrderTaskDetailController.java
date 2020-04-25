@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 库存工作单
+ *
  * @author jiangli
- * @since  2020-04-23 14:59:27
+ * @since 2020-04-23 14:59:27
  */
 @Api(tags = "库存工作单 管理")
 @RestController
@@ -45,8 +46,8 @@ public class WareOrderTaskDetailController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('wms:wareordertaskdetail:info')")
-    public Resp<WareOrderTaskDetail> info(@PathVariable("id") Long id){
-		WareOrderTaskDetail wareOrderTaskDetail = wareOrderTaskDetailService.getById(id);
+    public Resp<WareOrderTaskDetail> info(@PathVariable("id") Long id) {
+        WareOrderTaskDetail wareOrderTaskDetail = wareOrderTaskDetailService.getById(id);
 
         return Resp.ok(wareOrderTaskDetail);
     }
@@ -57,8 +58,8 @@ public class WareOrderTaskDetailController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('wms:wareordertaskdetail:save')")
-    public Resp<Object> save(@RequestBody WareOrderTaskDetail wareOrderTaskDetail){
-		wareOrderTaskDetailService.save(wareOrderTaskDetail);
+    public Resp<Object> save(@RequestBody WareOrderTaskDetail wareOrderTaskDetail) {
+        wareOrderTaskDetailService.save(wareOrderTaskDetail);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class WareOrderTaskDetailController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('wms:wareordertaskdetail:update')")
-    public Resp<Object> update(@RequestBody WareOrderTaskDetail wareOrderTaskDetail){
-		wareOrderTaskDetailService.updateById(wareOrderTaskDetail);
+    public Resp<Object> update(@RequestBody WareOrderTaskDetail wareOrderTaskDetail) {
+        wareOrderTaskDetailService.updateById(wareOrderTaskDetail);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class WareOrderTaskDetailController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('wms:wareordertaskdetail:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		wareOrderTaskDetailService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        wareOrderTaskDetailService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

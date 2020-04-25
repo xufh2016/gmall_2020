@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 退款信息
  *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 public interface OmsRefundInfoService extends IService<OmsRefundInfo> {
 

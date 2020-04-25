@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 退款信息
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Mapper
 public interface OmsRefundInfoDao extends BaseMapper<OmsRefundInfo> {
-	
+
 }

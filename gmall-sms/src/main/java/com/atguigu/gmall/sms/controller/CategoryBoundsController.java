@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品分类积分设置
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Api(tags = "商品分类积分设置 管理")
 @RestController
@@ -45,8 +46,8 @@ public class CategoryBoundsController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:categorybounds:info')")
-    public Resp<CategoryBounds> info(@PathVariable("id") Long id){
-		CategoryBounds categoryBounds = categoryBoundsService.getById(id);
+    public Resp<CategoryBounds> info(@PathVariable("id") Long id) {
+        CategoryBounds categoryBounds = categoryBoundsService.getById(id);
 
         return Resp.ok(categoryBounds);
     }
@@ -57,8 +58,8 @@ public class CategoryBoundsController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:categorybounds:save')")
-    public Resp<Object> save(@RequestBody CategoryBounds categoryBounds){
-		categoryBoundsService.save(categoryBounds);
+    public Resp<Object> save(@RequestBody CategoryBounds categoryBounds) {
+        categoryBoundsService.save(categoryBounds);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class CategoryBoundsController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:categorybounds:update')")
-    public Resp<Object> update(@RequestBody CategoryBounds categoryBounds){
-		categoryBoundsService.updateById(categoryBounds);
+    public Resp<Object> update(@RequestBody CategoryBounds categoryBounds) {
+        categoryBoundsService.updateById(categoryBounds);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class CategoryBoundsController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:categorybounds:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		categoryBoundsService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        categoryBoundsService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

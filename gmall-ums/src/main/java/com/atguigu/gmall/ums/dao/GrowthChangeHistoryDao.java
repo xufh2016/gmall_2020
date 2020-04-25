@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 成长值变化历史记录
+ *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 @Mapper
 public interface GrowthChangeHistoryDao extends BaseMapper<GrowthChangeHistory> {
-	
+
 }

@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 商品评价回复关系
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Mapper
 public interface CommentReplayDao extends BaseMapper<CommentReplay> {
-	
+
 }

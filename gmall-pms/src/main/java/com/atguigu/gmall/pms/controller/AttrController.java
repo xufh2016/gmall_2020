@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品属性
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "商品属性 管理")
 @RestController
@@ -45,8 +46,8 @@ public class AttrController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{attrId}")
     @PreAuthorize("hasAuthority('pms:attr:info')")
-    public Resp<Attr> info(@PathVariable("attrId") Long attrId){
-		Attr attr = attrService.getById(attrId);
+    public Resp<Attr> info(@PathVariable("attrId") Long attrId) {
+        Attr attr = attrService.getById(attrId);
 
         return Resp.ok(attr);
     }
@@ -57,8 +58,8 @@ public class AttrController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:attr:save')")
-    public Resp<Object> save(@RequestBody Attr attr){
-		attrService.save(attr);
+    public Resp<Object> save(@RequestBody Attr attr) {
+        attrService.save(attr);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class AttrController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:attr:update')")
-    public Resp<Object> update(@RequestBody Attr attr){
-		attrService.updateById(attr);
+    public Resp<Object> update(@RequestBody Attr attr) {
+        attrService.updateById(attr);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class AttrController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:attr:delete')")
-    public Resp<Object> delete(@RequestBody Long[] attrIds){
-		attrService.removeByIds(Arrays.asList(attrIds));
+    public Resp<Object> delete(@RequestBody Long[] attrIds) {
+        attrService.removeByIds(Arrays.asList(attrIds));
 
         return Resp.ok(null);
     }

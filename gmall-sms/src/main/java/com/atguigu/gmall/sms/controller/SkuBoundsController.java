@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品sku积分设置
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Api(tags = "商品sku积分设置 管理")
 @RestController
@@ -45,8 +46,8 @@ public class SkuBoundsController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:skubounds:info')")
-    public Resp<SkuBounds> info(@PathVariable("id") Long id){
-		SkuBounds skuBounds = skuBoundsService.getById(id);
+    public Resp<SkuBounds> info(@PathVariable("id") Long id) {
+        SkuBounds skuBounds = skuBoundsService.getById(id);
 
         return Resp.ok(skuBounds);
     }
@@ -57,8 +58,8 @@ public class SkuBoundsController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:skubounds:save')")
-    public Resp<Object> save(@RequestBody SkuBounds skuBounds){
-		skuBoundsService.save(skuBounds);
+    public Resp<Object> save(@RequestBody SkuBounds skuBounds) {
+        skuBoundsService.save(skuBounds);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class SkuBoundsController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:skubounds:update')")
-    public Resp<Object> update(@RequestBody SkuBounds skuBounds){
-		skuBoundsService.updateById(skuBounds);
+    public Resp<Object> update(@RequestBody SkuBounds skuBounds) {
+        skuBoundsService.updateById(skuBounds);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class SkuBoundsController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:skubounds:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		skuBoundsService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        skuBoundsService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

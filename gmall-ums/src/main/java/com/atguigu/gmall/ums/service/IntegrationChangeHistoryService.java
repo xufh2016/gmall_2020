@@ -9,7 +9,7 @@ import com.java.core.bean.QueryCondition;
  * 积分变化历史记录
  *
  * @author jiangli
- * @since  2020-04-23 14:40:52
+ * @since 2020-04-23 14:40:52
  */
 public interface IntegrationChangeHistoryService extends IService<IntegrationChangeHistory> {
 

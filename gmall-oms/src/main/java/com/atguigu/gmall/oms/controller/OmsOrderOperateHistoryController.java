@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 订单操作历史记录
+ *
  * @author jiangli
- * @since  2020-04-23 13:40:15
+ * @since 2020-04-23 13:40:15
  */
 @Api(tags = "订单操作历史记录 管理")
 @RestController
@@ -45,8 +46,8 @@ public class OmsOrderOperateHistoryController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('oms:omsorderoperatehistory:info')")
-    public Resp<OmsOrderOperateHistory> info(@PathVariable("id") Long id){
-		OmsOrderOperateHistory omsOrderOperateHistory = omsOrderOperateHistoryService.getById(id);
+    public Resp<OmsOrderOperateHistory> info(@PathVariable("id") Long id) {
+        OmsOrderOperateHistory omsOrderOperateHistory = omsOrderOperateHistoryService.getById(id);
 
         return Resp.ok(omsOrderOperateHistory);
     }
@@ -57,8 +58,8 @@ public class OmsOrderOperateHistoryController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('oms:omsorderoperatehistory:save')")
-    public Resp<Object> save(@RequestBody OmsOrderOperateHistory omsOrderOperateHistory){
-		omsOrderOperateHistoryService.save(omsOrderOperateHistory);
+    public Resp<Object> save(@RequestBody OmsOrderOperateHistory omsOrderOperateHistory) {
+        omsOrderOperateHistoryService.save(omsOrderOperateHistory);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class OmsOrderOperateHistoryController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('oms:omsorderoperatehistory:update')")
-    public Resp<Object> update(@RequestBody OmsOrderOperateHistory omsOrderOperateHistory){
-		omsOrderOperateHistoryService.updateById(omsOrderOperateHistory);
+    public Resp<Object> update(@RequestBody OmsOrderOperateHistory omsOrderOperateHistory) {
+        omsOrderOperateHistoryService.updateById(omsOrderOperateHistory);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class OmsOrderOperateHistoryController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('oms:omsorderoperatehistory:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		omsOrderOperateHistoryService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        omsOrderOperateHistoryService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

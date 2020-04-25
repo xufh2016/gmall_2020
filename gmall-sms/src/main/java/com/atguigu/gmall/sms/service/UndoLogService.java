@@ -6,10 +6,8 @@ import com.java.core.bean.PageVo;
 import com.java.core.bean.QueryCondition;
 
 /**
- * 
- *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 public interface UndoLogService extends IService<UndoLog> {
 

@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 属性分组
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "属性分组 管理")
 @RestController
@@ -45,8 +46,8 @@ public class AttrGroupController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{attrGroupId}")
     @PreAuthorize("hasAuthority('pms:attrgroup:info')")
-    public Resp<AttrGroup> info(@PathVariable("attrGroupId") Long attrGroupId){
-		AttrGroup attrGroup = attrGroupService.getById(attrGroupId);
+    public Resp<AttrGroup> info(@PathVariable("attrGroupId") Long attrGroupId) {
+        AttrGroup attrGroup = attrGroupService.getById(attrGroupId);
 
         return Resp.ok(attrGroup);
     }
@@ -57,8 +58,8 @@ public class AttrGroupController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:attrgroup:save')")
-    public Resp<Object> save(@RequestBody AttrGroup attrGroup){
-		attrGroupService.save(attrGroup);
+    public Resp<Object> save(@RequestBody AttrGroup attrGroup) {
+        attrGroupService.save(attrGroup);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class AttrGroupController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:attrgroup:update')")
-    public Resp<Object> update(@RequestBody AttrGroup attrGroup){
-		attrGroupService.updateById(attrGroup);
+    public Resp<Object> update(@RequestBody AttrGroup attrGroup) {
+        attrGroupService.updateById(attrGroup);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class AttrGroupController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:attrgroup:delete')")
-    public Resp<Object> delete(@RequestBody Long[] attrGroupIds){
-		attrGroupService.removeByIds(Arrays.asList(attrGroupIds));
+    public Resp<Object> delete(@RequestBody Long[] attrGroupIds) {
+        attrGroupService.removeByIds(Arrays.asList(attrGroupIds));
 
         return Resp.ok(null);
     }

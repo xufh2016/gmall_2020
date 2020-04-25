@@ -15,13 +15,15 @@ import java.util.Arrays;
 
 /**
  * 属性&属性分组关联
+ *
  * @author jiangli
- * @since  2020-04-23 09:52:30
+ * @since 2020-04-23 09:52:30
  */
 @Api(tags = "属性&属性分组关联 管理")
 @RestController
 @RequestMapping("pms/attrattrgrouprelation")
-public class AttrAttrgroupRelationController {
+public class AttrAttrgroupRelationController { //类继承关系快捷键ctrl+ t
+    //类下的所有方法快捷键 alt+7
     @Autowired
     private AttrAttrgroupRelationService attrAttrgroupRelationService;
 
@@ -44,8 +46,8 @@ public class AttrAttrgroupRelationController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('pms:attrattrgrouprelation:info')")
-    public Resp<AttrAttrgroupRelation> info(@PathVariable("id") Long id){
-		AttrAttrgroupRelation attrAttrgroupRelation = attrAttrgroupRelationService.getById(id);
+    public Resp<AttrAttrgroupRelation> info(@PathVariable("id") Long id) {
+        AttrAttrgroupRelation attrAttrgroupRelation = attrAttrgroupRelationService.getById(id);
 
         return Resp.ok(attrAttrgroupRelation);
     }
@@ -56,8 +58,8 @@ public class AttrAttrgroupRelationController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:attrattrgrouprelation:save')")
-    public Resp<Object> save(@RequestBody AttrAttrgroupRelation attrAttrgroupRelation){
-		attrAttrgroupRelationService.save(attrAttrgroupRelation);
+    public Resp<Object> save(@RequestBody AttrAttrgroupRelation attrAttrgroupRelation) {
+        attrAttrgroupRelationService.save(attrAttrgroupRelation);
 
         return Resp.ok(null);
     }
@@ -68,8 +70,8 @@ public class AttrAttrgroupRelationController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:attrattrgrouprelation:update')")
-    public Resp<Object> update(@RequestBody AttrAttrgroupRelation attrAttrgroupRelation){
-		attrAttrgroupRelationService.updateById(attrAttrgroupRelation);
+    public Resp<Object> update(@RequestBody AttrAttrgroupRelation attrAttrgroupRelation) {
+        attrAttrgroupRelationService.updateById(attrAttrgroupRelation);
 
         return Resp.ok(null);
     }
@@ -80,8 +82,8 @@ public class AttrAttrgroupRelationController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:attrattrgrouprelation:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		attrAttrgroupRelationService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        attrAttrgroupRelationService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

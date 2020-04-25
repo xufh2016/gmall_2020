@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 优惠券信息
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:10
+ * @since 2020-04-23 14:30:10
  */
 @Api(tags = "优惠券信息 管理")
 @RestController
@@ -45,8 +46,8 @@ public class CouponController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{id}")
     @PreAuthorize("hasAuthority('sms:coupon:info')")
-    public Resp<Coupon> info(@PathVariable("id") Long id){
-		Coupon coupon = couponService.getById(id);
+    public Resp<Coupon> info(@PathVariable("id") Long id) {
+        Coupon coupon = couponService.getById(id);
 
         return Resp.ok(coupon);
     }
@@ -57,8 +58,8 @@ public class CouponController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('sms:coupon:save')")
-    public Resp<Object> save(@RequestBody Coupon coupon){
-		couponService.save(coupon);
+    public Resp<Object> save(@RequestBody Coupon coupon) {
+        couponService.save(coupon);
 
         return Resp.ok(null);
     }
@@ -69,8 +70,8 @@ public class CouponController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('sms:coupon:update')")
-    public Resp<Object> update(@RequestBody Coupon coupon){
-		couponService.updateById(coupon);
+    public Resp<Object> update(@RequestBody Coupon coupon) {
+        couponService.updateById(coupon);
 
         return Resp.ok(null);
     }
@@ -81,8 +82,8 @@ public class CouponController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('sms:coupon:delete')")
-    public Resp<Object> delete(@RequestBody Long[] ids){
-		couponService.removeByIds(Arrays.asList(ids));
+    public Resp<Object> delete(@RequestBody Long[] ids) {
+        couponService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
     }

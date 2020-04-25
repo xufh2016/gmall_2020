@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 秒杀活动商品关联
+ *
  * @author jiangli
- * @since  2020-04-23 14:30:09
+ * @since 2020-04-23 14:30:09
  */
 @Mapper
 public interface SeckillSkuRelationDao extends BaseMapper<SeckillSkuRelation> {
-	
+
 }
